@@ -1,13 +1,317 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.catalogue {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+ 
+}
+/*produit*/
+.produit {
+  width: 190px;
+  border: 2px solid #ad4ace;
+  padding: 10px;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.produit img {
+  width: 200px; 
+  height: 200px; 
+  object-fit: cover; 
+}
+
+.produit p {
+  flex-grow: 1; 
+  margin: 10px 0;
+}
+
+.produit button {
+  background-color: #994cae;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 70%; 
+}
+
+.produit button:hover {
+  background-color: #b62f6e;
+}
+
+
+/*panier*/
+.panier {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  padding: 20px;
+  width: 50%;
+  background-color: #fefefe; /* Fond doux et neutre */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet 3D */
+  border: 2px solid #e0e0e0; /* Bordures fines et douces */
+}
+
+.panier h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #0a0a0a; /* Couleur chaleureuse pour le titre */
+  margin-bottom: 20px;
+}
+
+.panier p {
+  font-size: 1.2rem;
+  color: #0a0a0a; /* Texte bien lisible */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.panier-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 2 coloane */
+  gap: 20px; /* Spațiu între elemente */
+  margin-top: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.panier .item:last-child {
+  border-bottom: none;
+}
+
+.panier .item img {
+  width: 60px; /* Petite image pour le produit */
+  height: 60px;
+  object-fit: cover; /* S'assure que l'image reste proportionnée */
+  border-radius: 10px;
+  margin-right: 10px; /* Espace entre l'image et le texte */
+}
+
+.panier .item span {
+  flex-grow: 1;
+  margin-left: 20px;
+  font-size: 1.2rem;
+  color: #0a0a0a;
+}
+
+.panier button {
+  background-color: #994cae; /* Couleur douce pour les boutons */
+  margin-top: 10px;
+  margin-left: 5px;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+ 
+  transition: background-color 0.3s ease;
+}
+
+.panier button:hover {
+  background-color: #b62f6e; /* Changement de couleur au survol */
+}
+
+.panier .total {
+  text-align: right;
+  font-size: 1.4rem;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #0a0a0a;
+}
+
+.panier .vide-message {
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 20px 0;
+  color: #888;
+}
+
+/*confirmation*/
+.confirmation {
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fefefe; /* Fond doux et neutre */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet 3D */
+  border: 2px solid #e0e0e0; /* Bordures fines et douces */
+  width: 50%; /* Lățimea formularului */
+}
+
+.confirmation h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color:#0a0a0a ; /* Culoare caldă pentru titlu */
+  margin-bottom: 20px; /* Spațiu sub titlu */
+}
+
+.confirmation label {
+  display: block; /* Fiecare etichetă pe o linie nouă */
+  font-size: 1.2rem;
+  color: #333; /* Text ușor de citit */
+  margin-bottom: 10px; /* Spațiu între etichete și câmpuri */
+}
+
+.confirmation input {
+  width: 100%; /* Câmpuri să ocupe întreaga lățime */
+  padding: 10px;
+  border: 1px solid #ddd; /* Bordură moale */
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.confirmation button {
+  background-color: #994cae; /* Culoare pentru buton */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: block; /* Butonul va ocupa toată lățimea */
+  margin: 20px auto 0; /* Centrare */
+}
+
+.confirmation button:hover {
+  background-color: #b62f6e; /* Schimbarea culorii la hover */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #e3b1ea; /* Fundal deschis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra pentru efect */
+  margin-bottom: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  
+}
+
+.logo img {
+  width: 50px; /* Lățimea logo-ului */
+  height: 50px; /* Înălțimea logo-ului */
+  margin-right: 10px; /* Spațiu între logo și text */
+  animation: bounce 1s infinite; /* Animație de săritură */
+  background: none;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: #7b208f; /* Culoare caldă pentru titlu */
+  margin: 10px 0; /* Spațiu între imagine și titlu */
+  text-align: center; /* Centrează textul */
+}
+.navbar ul {
+  display: flex;
+  list-style-type: none; /* Elimină punctele de listă */
+  margin: 0; /* Elimină marginea */
+  padding: 0; /* Elimină padding-ul */
+}
+
+.navbar li {
+  margin: 0 15px; /* Spațiu între elemente */
+}
+
+.navbar a {
+  
+  text-decoration: none; /* Elimină sublinierea */
+  color: #272424; /* Culoare text */
+  font-size: 1.2rem; /* Dimensiune text */
+  transition: color 0.3s; /* Animație la hover */
+}
+
+.navbar a:hover {
+  color: #994cae; /* Schimbare culoare la hover */
+}
+
+/* Stil pentru footer */
+.footer {
+  background-color: #e3b1ea; /* Fundal deschis */
+  text-align: center; /* Centrare text */
+  padding: 20px; /* Padding */
+  border-top: 2px solid #e0e0e0; /* Bordură de sus */
+  position: relative;
+  bottom: 0;
+  width: 100%; /* Lățimea completă */
+}
+
+.footer p {
+  margin: 5px 0; /* Spațiu între rânduri */
+  
+}
+
+/* Animație pentru logo */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Săriți 10px */
+  }
+}
+.contact {
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fefefe; /* Fond neutru */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pentru un efect 3D */
+  width: 50%; /* Lățimea formularului */
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #7b208f; /* Culoare caldă pentru titlu */
+  margin-bottom: 20px; /* Spațiu sub titlu */
+}
+
+.contact label {
+  display: block; /* Fiecare etichetă pe o linie nouă */
+  margin-bottom: 5px; /* Spațiu între etichete și câmpuri */
+}
+
+.contact input,
+.contact textarea {
+  width: 100%; /* Câmpurile să ocupe întreaga lățime */
+  padding: 10px;
+  margin-bottom: 15px; /* Spațiu între câmpuri */
+  border: 1px solid #ddd; /* Bordură moale */
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact button {
+  background-color: #994cae; /* Culoare pentru buton */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: block; /* Butonul va ocupa toată lățimea */
+  margin: 0 auto; /* Centrare */
+}
+
+.contact button:hover {
+  background-color: #b62f6e; /* Schimbarea culorii la hover */
 }

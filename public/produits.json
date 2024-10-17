@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "nom": "Produit 1",
+      "description": "Ours avec salopette",
+      "prix": 10,
+      "image": "img/ours1.jpg"
+    },
+    {
+      "id": 2,
+      "nom": "Produit 2",
+      "description": "Ours mauve",
+      "prix": 12,
+      "image": "img/ours2.jpg"
+    },
+    {
+        "id": 3,
+        "nom": "Produit 3",
+        "description": "Ours avec écharpe",
+        "prix": 8,
+        "image": "img/ours3.jpg"
+    },
+    {
+        "id": 4,
+        "nom": "Produit 4",
+        "description": "Ours en T-shirt",
+        "prix": 15,
+        "image": "img/ours4.jpg"
+    },
+    {
+        "id": 5,
+        "nom": "Produit 5",
+        "description": "Ours 30cm",
+        "prix": 10,
+        "image": "img/ours5.jpg"
+    },
+    {
+        "id": 6,
+        "nom": "Produit 6",
+        "description": "Le Ours Paddington",
+        "prix": 20,
+        "image": "img/ours6.jpg"
+    },
+    {
+        "id": 7,
+        "nom": "Produit 7",
+        "description": "Ours avec bebe",
+        "prix": 15,
+        "image": "img/ours7.jpg"
+    },
+    {
+        "id": 8,
+        "nom": "Produit 8",
+        "description": "Ours fille",
+        "prix": 8,
+        "image": "img/ours8.jpg"
+    }
+  ]
+  
