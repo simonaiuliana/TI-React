@@ -28,6 +28,7 @@ img {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center; /* Aliniază produsele în centru */
+  margin-top: 10px;
 }
 
 .produit {

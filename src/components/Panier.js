@@ -1,29 +1,34 @@
-
+// src/components/Panier.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Panier = ({ panier, total, enleverDuPanier }) => {
+  const navigate = useNavigate(); // Utilisez useNavigate ici
+
+  const handleConfirmationClick = () => {
+    navigate('/confirmation'); // Naviguer vers la page de confirmation
+  };
+
   return (
     <div className="panier">
-      <h2>Votre Panier</h2>
+      <h2>Panier</h2>
       {panier.length === 0 ? (
-        <p className="vide-message">Votre panier est vide</p>
+        <p>Votre panier est vide</p>
       ) : (
-        <div>
-          {panier.map((item) => (
-            <div className="item" key={item.id}>
-              {/* Affiche l'image du produit */}
-              <img src={item.image} alt={item.nom} />
-              <span>
-                {item.nom} x {item.quantité}
-              </span>
-              <button onClick={() => enleverDuPanier(item.id)}>Enlever</button>
-            </div>
-          ))}
-          <div className="total">
-            <h3>Total: {total} €</h3>
+        panier.map((item) => (
+          <div key={item.id} className="item">
+            <img src={item.image} alt={item.nom} />
+            <span>{item.nom}</span>
+            <span>{item.quantité}</span>
+            <span>{item.prix} €</span>
+            <button onClick={() => enleverDuPanier(item.id)}>Enlever</button>
           </div>
-        </div>
+        ))
       )}
+      <div className="total">
+        Total: {total} €
+      </div>
+      <button onClick={handleConfirmationClick} className="confirm-order-button">Confirmation de Commande</button>
     </div>
   );
 };

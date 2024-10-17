@@ -1,6 +1,4 @@
 // src/App.js
-// src/App.js
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Catalogue from './components/Catalogue';
@@ -15,7 +13,7 @@ function App() {
   const [produits, setProduits] = useState([]);
   const [panier, setPanier] = useState([]);
   const [total, setTotal] = useState(0);
-  const [categorie, setCategorie] = useState('accueil'); // Setează categoria inițială pe "accueil"
+  const [categorie, setCategorie] = useState('accueil');
 
   useEffect(() => {
     fetch('/produits.json')
@@ -25,7 +23,7 @@ function App() {
 
   const changerCategorie = (categorie) => {
     setCategorie(categorie);
-    console.log(`Categorie selectată: ${categorie}`);
+    console.log(`Categorie sélectionnée: ${categorie}`);
   };
 
   const ajouterAuPanier = (produit) => {
@@ -61,11 +59,11 @@ function App() {
               <Catalogue produits={produits} ajouterAuPanier={ajouterAuPanier} categorie={categorie} />
               <div className="container">
                 <Panier panier={panier} total={total} enleverDuPanier={enleverDuPanier} />
-                <Confirmation soumettreCommande={soumettreCommande} />
               </div>
             </>
           } />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/confirmation" element={<Confirmation soumettreCommande={soumettreCommande} />} />
         </Routes>
         <Footer isContactPage={window.location.pathname === '/contact'} />
       </div>
