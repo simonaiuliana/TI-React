@@ -65,7 +65,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/confirmation" element={<Confirmation soumettreCommande={soumettreCommande} />} />
         </Routes>
-        <Footer isContactPage={window.location.pathname === '/contact'} />
+        <Footer />
       </div>
     </Router>
   );

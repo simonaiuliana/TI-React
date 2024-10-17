@@ -7,6 +7,22 @@ body, html {
   min-height: 100vh; /* Asigură că pagina are o înălțime minimă */
   display: flex;
   flex-direction: column;
+  background-image: url('../public/img/background.avif'); /* Ajustează calea */
+  height: 100vh; /* Înalțimea 100% din înălțimea ferestrei */
+  background-size: cover; /* Asigură-te că imaginea acoperă întregul spațiu */
+  background-position: center; /* Centrează imaginea */
+  background-repeat: no-repeat; /* Previne repetarea imaginii */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1; /* Permite conținutului principal să ocupe tot spațiul disponibil */
+  padding-bottom: 100px; /* Adaugă padding pentru a face loc footer-ului */
 }
 
 .container {
@@ -70,6 +86,7 @@ img {
   border-radius: 10px;
   padding: 20px;
   width: 100%;
+  min-height: 29vh;
   max-width: 600px; /* Limitează lățimea la dimensiuni mari */
   background-color: #fefefe;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -208,7 +225,8 @@ img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
-  margin-bottom: 20px; /* Ajustează marginea de jos */
+  margin-top: 7%;
+  margin-bottom: 8%;
 }
 
 .contact h2 {
@@ -247,26 +265,6 @@ img {
 
 .contact button:hover {
   background-color: #b62f6e;
-}
-
-/* Hero Carousel */
-.hero-carousel {
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.hero-carousel-item {
-  min-width: 100%;
-}
-
-.hero-carousel-image {
-  width: 100%;
-  height: auto;
 }
 
 /* Stiluri pentru elementele de navigare și header */
@@ -327,7 +325,9 @@ img {
   padding: 20px;
   border-top: 2px solid #e0e0e0;
   width: 100%;
-  position: relative;
+  /* Folosește fixed pentru a-l fixa în partea de jos */
+  bottom: 0; /* Așează-l în partea de jos a ferestrei */
+  z-index: 1; 
 }
 
 /* Media queries pentru diferite dimensiuni de ecran */

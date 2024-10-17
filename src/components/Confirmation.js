@@ -1,4 +1,5 @@
 // src/components/Confirmation.js
+// src/components/Confirmation.js
 import React, { useState } from 'react';
 
 const Confirmation = ({ soumettreCommande }) => {
@@ -70,11 +71,13 @@ const Confirmation = ({ soumettreCommande }) => {
           <label>
             Numéro de téléphone:
             <input
-              type="number"
+              type="text"
               name="numeroTelephone"
               value={formData.numeroTelephone}
               onChange={handleChange}
               required
+              pattern="\d{10}" // Acceptă doar numere de telefon cu 10 cifre
+              placeholder="0123456789" // Exemplu de număr de telefon
             />
           </label>
           <label>
@@ -97,21 +100,29 @@ const Confirmation = ({ soumettreCommande }) => {
               <label>
                 Numéro de carte:
                 <input
-                  type="number"
+                  type="text"
                   name="numeroCarte"
                   value={formData.numeroCarte}
                   onChange={handleChange}
                   required
+                  minLength="16" // Asigură că numărul are cel puțin 16 cifre
+                  maxLength="16" // Asigură că numărul nu depășește 16 cifre
+                  pattern="\d{16}" // Acceptă doar 16 cifre
+                  placeholder="XXXX XXXX XXXX XXXX" // Indicație pentru utilizator
                 />
               </label>
               <label>
                 Code de sécurité:
                 <input
-                  type="number"
+                  type="text"
                   name="codeSecurite"
                   value={formData.codeSecurite}
                   onChange={handleChange}
                   required
+                  minLength="3" // Asigură că codul are cel puțin 3 cifre
+                  maxLength="3" // Asigură că codul nu depășește 3 cifre
+                  pattern="\d{3}" // Acceptă doar 3 cifre
+                  placeholder="XXX" // Indicație pentru utilizator
                 />
               </label>
             </>
@@ -123,7 +134,7 @@ const Confirmation = ({ soumettreCommande }) => {
                 Email PayPal:
                 <input
                   type="email"
-                  name="email"
+                  name="emailPayPal"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -135,11 +146,11 @@ const Confirmation = ({ soumettreCommande }) => {
           {formData.methodePaiement === 'virementBancaire' && (
             <>
               <label>
-              Entrez votre adresse email à laquelle nous vous enverrons les détails pour effectuer le paiement.
+                Entrez votre adresse email à laquelle nous vous enverrons les détails pour effectuer le paiement:
                 <input
                   type="email"
-                  name="email"
-                  value={formData.numeroTelephone}
+                  name="emailVirement"
+                  value={formData.email}
                   onChange={handleChange}
                   required
                 />
