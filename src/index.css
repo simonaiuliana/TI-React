@@ -45,6 +45,7 @@ img {
   gap: 20px;
   justify-content: center; /* Aliniază produsele în centru */
   margin-top: 10px;
+  
 }
 
 .produit {
@@ -52,6 +53,7 @@ img {
   border: 2px solid #ad4ace;
   padding: 10px;
   text-align: center;
+  background-color: white;
 }
 
 .produit img {
@@ -321,6 +323,7 @@ img {
 /* Footer */
 .footer {
   background-color: #e3b1ea;
+  border-top: 2px solid #e0e0e0;
   text-align: center;
   padding: 20px;
   border-top: 2px solid #e0e0e0;
