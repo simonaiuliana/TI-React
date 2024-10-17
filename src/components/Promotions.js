@@ -4,7 +4,7 @@ const Promotions = () => {
   return (
     <div>
       <h2>Promotions</h2>
-      <p>Aici poți găsi jucăriile în promoție!</p>
+      <p>Jouets en promotions!</p>
       {/* Adaugă aici lista de jucării în promoție */}
     </div>
   );

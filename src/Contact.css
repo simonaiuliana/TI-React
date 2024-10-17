@@ -1,0 +1,17 @@
+/* src/components/Contact.css */
+/* src/Contact.css */
+.contact-page {
+    min-height: calc(100vh - 100px); /* Ajustează în funcție de înălțimea header-ului și footer-ului */
+    padding-bottom: 50px; /* Asigură un spațiu pentru footer */
+  }
+  
+  .footer {
+    position: sticky; /* Face footer-ul sticky */
+    bottom: 0; /* Așează-l la baza paginii */
+    left: 0;
+    right: 0;
+    background-color: #e3b1ea; /* Fundal footer */
+    padding: 20px;
+    text-align: center;
+  }
+  

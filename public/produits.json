@@ -4,56 +4,257 @@
       "nom": "Produit 1",
       "description": "Ours avec salopette",
       "prix": 10,
-      "image": "img/ours1.jpg"
+      "image": "img/ours1.jpg",
+      "categorie": "accueil"
     },
     {
       "id": 2,
       "nom": "Produit 2",
       "description": "Ours mauve",
       "prix": 12,
-      "image": "img/ours2.jpg"
+      "image": "img/ours2.jpg",
+      "categorie": "accueil"
     },
     {
         "id": 3,
         "nom": "Produit 3",
         "description": "Ours avec écharpe",
         "prix": 8,
-        "image": "img/ours3.jpg"
+        "image": "img/ours3.jpg",
+        "categorie": "accueil"
     },
     {
         "id": 4,
         "nom": "Produit 4",
         "description": "Ours en T-shirt",
         "prix": 15,
-        "image": "img/ours4.jpg"
+        "image": "img/ours4.jpg",
+        "categorie": "accueil"
     },
     {
         "id": 5,
         "nom": "Produit 5",
         "description": "Ours 30cm",
         "prix": 10,
-        "image": "img/ours5.jpg"
+        "image": "img/ours5.jpg",
+        "categorie": "accueil"
     },
     {
         "id": 6,
         "nom": "Produit 6",
         "description": "Le Ours Paddington",
         "prix": 20,
-        "image": "img/ours6.jpg"
+        "image": "img/ours6.jpg",
+        "categorie": "accueil"
     },
     {
         "id": 7,
         "nom": "Produit 7",
         "description": "Ours avec bebe",
         "prix": 15,
-        "image": "img/ours7.jpg"
+        "image": "img/ours7.jpg",
+        "categorie": "accueil"
     },
     {
         "id": 8,
         "nom": "Produit 8",
         "description": "Ours fille",
         "prix": 8,
-        "image": "img/ours8.jpg"
-    }
+        "image": "img/ours8.jpg",
+        "categorie": "accueil"
+    },
+    {
+        "id": 9,
+        "nom": "Produit 9",
+        "description": "",
+        "prix": 10,
+        "image": "img/9.jpg",
+        "categorie": "autres"
+      },
+      {
+        "id": 10,
+        "nom": "Produit 10",
+        "description": "",
+        "prix": 12,
+        "image": "img/10.jpg",
+        "categorie": "autres"
+      },
+      {
+          "id": 11,
+          "nom": "Produit 11",
+          "description": "",
+          "prix": 8,
+          "image": "img/11.jpg",
+          "categorie": "autres"
+      },
+      {
+          "id": 12,
+          "nom": "Produit 12",
+          "description": "",
+          "prix": 15,
+          "image": "img/12.jpg",
+          "categorie": "autres"
+      },
+      {
+          "id": 13,
+          "nom": "Produit 13",
+          "description": "",
+          "prix": 10,
+          "image": "img/13.jpg",
+          "categorie": "autres"
+      },
+      {
+          "id": 14,
+          "nom": "Produit 14",
+          "description": "",
+          "prix": 20,
+          "image": "img/14.jpg",
+          "categorie": "autres"
+      },
+      {
+          "id": 15,
+          "nom": "Produit 15",
+          "description": "",
+          "prix": 15,
+          "image": "img/15.jpg",
+          "categorie": "autres"
+      },
+      {
+          "id": 16,
+          "nom": "Produit 16",
+          "description": "",
+          "prix": 8,
+          "image": "img/16.jpg",
+          "categorie": "autres"
+      },
+      {
+        "id": 17,
+        "nom": "Produit 17",
+        "description": "",
+        "prix": 10,
+        "image": "img/17.jpg",
+        "categorie": "nouveautes"
+      },
+      {
+        "id": 18,
+        "nom": "Produit 18",
+        "description": "",
+        "prix": 12,
+        "image": "img/18.jpg",
+        "categorie": "nouveautes"
+      },
+      {
+          "id": 19,
+          "nom": "Produit 19",
+          "description": "",
+          "prix": 8,
+          "image": "img/19.jpg",
+          "categorie": "nouveautes"
+      },
+      {
+          "id": 20,
+          "nom": "Produit 20",
+          "description": "",
+          "prix": 15,
+          "image": "img/20.jpg",
+          "categorie": "nouveautes"
+      },
+      {
+          "id": 21,
+          "nom": "Produit 21",
+          "description": "",
+          "prix": 10,
+          "image": "img/21.jpg",
+          "categorie": "nouveautes"
+      },
+      {
+          "id": 22,
+          "nom": "Produit 22",
+          "description": "",
+          "prix": 20,
+          "image": "img/22.jpg",
+          "categorie": "nouveautes"
+      },
+      {
+          "id": 23,
+          "nom": "Produit 23",
+          "description": "",
+          "prix": 15,
+          "image": "img/23.jpg",
+          "categorie": "nouveautes"
+      },
+      {
+          "id": 24,
+          "nom": "Produit 24",
+          "description": "",
+          "prix": 8,
+          "image": "img/24.jpg",
+          "categorie": "nouveautes"
+      },
+      {
+        "id": 25,
+        "nom": "Produit 25",
+        "description": "",
+        "prix": 10,
+        "image": "img/25.jpg",
+        "categorie": "promotions"
+      },
+      {
+        "id": 26,
+        "nom": "Produit 26",
+        "description": "",
+        "prix": 12,
+        "image": "img/26.jpg",
+        "categorie": "promotions"
+      },
+      {
+          "id": 27,
+          "nom": "Produit 27",
+          "description": "",
+          "prix": 8,
+          "image": "img/27.jpg",
+          "categorie": "promotions"
+      },
+      {
+          "id": 28,
+          "nom": "Produit 28",
+          "description": "",
+          "prix": 15,
+          "image": "img/28.jpg",
+          "categorie": "promotions"
+      },
+      {
+          "id": 29,
+          "nom": "Produit 29",
+          "description": "",
+          "prix": 10,
+          "image": "img/29.jpg",
+          "categorie": "promotions"
+      },
+      {
+          "id": 30,
+          "nom": "Produit 30",
+          "description": "",
+          "prix": 20,
+          "image": "img/30.jpg",
+          "categorie": "promotions"
+      },
+      {
+          "id": 31,
+          "nom": "Produit 31",
+          "description": "",
+          "prix": 15,
+          "image": "img/31.jpg",
+          "categorie": "promotions"
+      },
+      {
+          "id": 32,
+          "nom": "Produit 32",
+          "description": "",
+          "prix": 8,
+          "image": "img/32.jpg",
+          "categorie": "promotions"
+      }
+      
   ]
   

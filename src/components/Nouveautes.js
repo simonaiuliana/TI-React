@@ -4,7 +4,7 @@ const Nouveautes = () => {
   return (
     <div>
       <h2>Nouveautés</h2>
-      <p>Acestea sunt jucăriile noi!</p>
+      <p>Les dernieres entres!</p>
       {/* Adaugă aici lista de jucării noi */}
     </div>
   );

@@ -198,6 +198,9 @@
   background-color: #e3b1ea; /* Fundal deschis */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra pentru efect */
   margin-bottom: 30px;
+  position: sticky; /* Face navbarul sticky */
+  top: 0; /* Lăsa-l fixat în partea de sus */
+  z-index: 1000; 
 }
 
 .logo {
@@ -297,6 +300,7 @@
   border: 1px solid #ddd; /* Bordură moale */
   border-radius: 5px;
   font-size: 1rem;
+  padding-right: 10px;
 }
 
 .contact button {

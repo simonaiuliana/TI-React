@@ -1,25 +1,32 @@
 // src/App.js
+// src/App.js
 
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Schimbă Switch cu Routes
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Catalogue from './components/Catalogue';
 import Panier from './components/Panier';
 import Confirmation from './components/Confirmation';
 import Contact from './components/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   const [produits, setProduits] = useState([]);
   const [panier, setPanier] = useState([]);
   const [total, setTotal] = useState(0);
-  const [showContact, setShowContact] = useState(false);
+  const [categorie, setCategorie] = useState('accueil'); // Setează categoria inițială pe "accueil"
 
   useEffect(() => {
     fetch('/produits.json')
       .then((res) => res.json())
       .then((data) => setProduits(data));
   }, []);
+
+  const changerCategorie = (categorie) => {
+    setCategorie(categorie);
+    console.log(`Categorie selectată: ${categorie}`);
+  };
 
   const ajouterAuPanier = (produit) => {
     const exist = panier.find((item) => item.id === produit.id);
@@ -47,11 +54,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header setShowContact={setShowContact} />
+        <Header changerCategorie={changerCategorie} />
         <Routes>
           <Route path="/" element={
             <>
-              <Catalogue produits={produits} ajouterAuPanier={ajouterAuPanier} />
+              <Catalogue produits={produits} ajouterAuPanier={ajouterAuPanier} categorie={categorie} />
               <div className="container">
                 <Panier panier={panier} total={total} enleverDuPanier={enleverDuPanier} />
                 <Confirmation soumettreCommande={soumettreCommande} />
@@ -59,9 +66,8 @@ function App() {
             </>
           } />
           <Route path="/contact" element={<Contact />} />
-          {/* Adaugă aici rutele pentru alte pagini dacă este necesar */}
         </Routes>
-        <Footer />
+        <Footer isContactPage={window.location.pathname === '/contact'} />
       </div>
     </Router>
   );
