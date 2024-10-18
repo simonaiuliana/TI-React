@@ -343,7 +343,6 @@ img {
   bottom: 0;
   z-index: 1; 
 }
-* Stiluri pentru hamburger */
 .hamburger {
   display: none; /* Ascunde hamburgerul pe ecrane mari */
   flex-direction: column;
@@ -368,7 +367,6 @@ img {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
 }
 
 /* Media Queries */

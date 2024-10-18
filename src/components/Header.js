@@ -1,11 +1,13 @@
+// src/components/Header.js
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = ({ changerCategorie }) => {
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false); // Starea meniului (deschis/închis)
+
   const toggleMenu = () => {
-    setIsOpen(!isOpen); 
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -14,30 +16,30 @@ const Header = ({ changerCategorie }) => {
         <img src="/img/logo.png" alt="Logo" />
         <h1>Magasin de Jouets en Peluche</h1>
       </div>
+      <nav className={`navbar ${isOpen ? 'open' : ''}`}>
+        <ul>
+          <li>
+            <Link to="/" onClick={() => changerCategorie('accueil')}>Accueil</Link>
+          </li>
+          <li>
+            <Link to="/" onClick={() => changerCategorie('autres')}>Autres Jouets</Link>
+          </li>
+          <li>
+            <Link to="/" onClick={() => changerCategorie('nouveautes')}>Nouveautés</Link>
+          </li>
+          <li>
+            <Link to="/" onClick={() => changerCategorie('promotions')}>Promotions</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
       <div className="hamburger" onClick={toggleMenu}>
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
       </div>
-      <nav className={`navbar ${isOpen ? 'open' : ''}`}>
-        <ul>
-          <li>
-            <Link to="/" onClick={() => { changerCategorie('accueil'); setIsOpen(false); }}>Accueil</Link>
-          </li>
-          <li>
-            <Link to="/" onClick={() => { changerCategorie('autres'); setIsOpen(false); }}>Autres Jouets</Link>
-          </li>
-          <li>
-            <Link to="/" onClick={() => { changerCategorie('nouveautes'); setIsOpen(false); }}>Nouveautés</Link>
-          </li>
-          <li>
-            <Link to="/" onClick={() => { changerCategorie('promotions'); setIsOpen(false); }}>Promotions</Link>
-          </li>
-          <li>
-            <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
-          </li>
-        </ul>
-      </nav>
     </header>
   );
 };
