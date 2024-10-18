@@ -87,7 +87,7 @@
       "prix": 12,
       "image": "img/10.jpg",
       "categorie": "autres",
-      "quantiteDisponible": 1
+      "quantiteDisponible": 13
     },
     {
       "id": 11,
@@ -204,7 +204,7 @@
       "prix": 15,
       "image": "img/23.jpg",
       "categorie": "nouveautes",
-      "quantiteDisponible": 1
+      "quantiteDisponible": 14
     },
     {
       "id": 24,
@@ -258,7 +258,7 @@
       "prix": 10,
       "image": "img/29.jpg",
       "categorie": "promotions",
-      "quantiteDisponible": 6
+      "quantiteDisponible": 16
     },
     {
       "id": 30,
@@ -267,7 +267,7 @@
       "prix": 20,
       "image": "img/30.jpg",
       "categorie": "promotions",
-      "quantiteDisponible": 1
+      "quantiteDisponible": 12
     },
     {
       "id": 31,

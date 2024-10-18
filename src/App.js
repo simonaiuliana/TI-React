@@ -88,9 +88,11 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/confirmation" element={<Confirmation soumettreCommande={soumettreCommande} />} />
         </Routes>
-        <Footer />
+      
       </div>
+      <Footer />
     </Router>
+   
   );
 }
 

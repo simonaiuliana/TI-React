@@ -226,7 +226,7 @@ img {
   padding: 20px;
   border-radius: 10px;
   background-color: #fefefe;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 4 8px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
   margin-top: 7%;
@@ -253,6 +253,7 @@ img {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+ 
 }
 
 .contact button {
@@ -292,12 +293,18 @@ img {
 .logo img {
   width: 50px; 
   height: 50px;
-  animation: bounce 1s infinite; /* Aplicarea animației bounce pe logo */
+  animation: bounce 1s ease infinite; /* Aplicarea animației bounce pe logo */
 }
 
 .logo h1 {
   font-size: 1.8rem;
-  color: #7b208f;
+  color: #ff4b3b;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
 }
 
 .navbar ul {
@@ -305,6 +312,7 @@ img {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap; /* Permite elementelor să se înfășoare */
 }
 
 .navbar li {
@@ -315,11 +323,14 @@ img {
   text-decoration: none;
   color: #272424;
   font-size: 1.2rem;
-  transition: color 0.3s;
+  padding: 10px 15px; /* Adăugăm un padding pentru un aspect mai bun */
+  border-radius: 5px; /* Rounding corners */
+  transition: background-color 0.3s, color 0.3s; /* Adăugăm tranziție */
 }
 
 .navbar a:hover {
-  color: #994cae;
+  background-color: #994cae; /* Schimbăm culoarea fundalului la hover */
+  color: white; /* Schimbăm culoarea textului la hover */
 }
 
 /* Footer */
@@ -332,61 +343,146 @@ img {
   bottom: 0;
   z-index: 1; 
 }
-
-/* Media queries */
-@media only screen and (max-width: 1024px) {
-  .container {
-    padding: 15px;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-  }
+* Stiluri pentru hamburger */
+.hamburger {
+  display: none; /* Ascunde hamburgerul pe ecrane mari */
+  flex-direction: column;
+  cursor: pointer;
 }
 
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #7b208f; /* Culoarea liniilor */
+  margin: 4px 0; /* Distanța între linii */
+}
+
+/* Navbar */
+.navbar {
+  display: flex; /* Afișează navbar-ul pe ecrane mari */
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+/* Media Queries */
 @media only screen and (max-width: 768px) {
+  .navbar {
+    display: none; /* Ascunde navbar-ul pe ecrane mici */
+  }
+
+  .hamburger {
+    display: flex; /* Afișează hamburger-ul pe ecrane mici */
+  }
+
+  .navbar.open {
+    display: flex; /* Afișează navbar-ul când este deschis */
+    flex-direction: column; /* Dispunere verticală */
+    background-color: #fefefe; /* Fundal pentru dropdown */
+    position: absolute; /* Poziționare absolută pentru a se suprapune peste conținut */
+    top: 100%; /* Sub header */
+    width: 100%; /* Lățimea completă */
+    z-index: 1000; /* Asigură-te că este deasupra altor elemente */
+  }
+
+  .navbar.open ul {
+    flex-direction: column; /* Dispunere verticală a link-urilor */
+    align-items: center; /* Center items */
+    padding: 10px 0; /* Padding pe verticală */
+  }
+
+  .navbar.open li {
+    margin: 10px 0; /* Distanțare între link-uri */
+  }
+  .footer {
+    bottom: 0;
+    z-index: 1; 
+  }
   .container {
     padding: 10px;
   }
 
   .header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar {
-    margin-top: 10px;
-    text-align: center;
+    flex-direction: column; /* Colapsăm header-ul pe ecrane mici */
+    align-items: center; /* Centrăm elementele */
   }
 
   .catalogue {
-    flex-direction: column;
+    flex-direction: column; /* Colapsăm produsele în coloană */
     align-items: center;
   }
 
   .produit {
-    width: 100%;
+    width: 100%; /* Produsele ocupă întreaga lățime */
   }
 
   .panier {
-    width: 100%;
+    width: 100%; /* Panier-ul ocupă întreaga lățime */
   }
 
   .confirmation,
   .contact {
-    width: 100%;
+    width: 100%; /* Confirmarea și contactul ocupă întreaga lățime */
+  }
+}
+/* Media queries */
+@media only screen and (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+  .navbar {
+    display: none; /* Ascunde navbar-ul pe ecrane mici */
+  }
+
+  .hamburger {
+    display: flex; /* Afișează hamburger-ul pe ecrane mici */
+  }
+
+  .navbar.open {
+    display: flex; /* Afișează navbar-ul când este deschis */
+    flex-direction: column; /* Dispunere verticală */
+    background-color: #fefefe; /* Fundal pentru dropdown */
+    position: absolute; /* Poziționare absolută pentru a se suprapune peste conținut */
+    top: 100%; /* Sub header */
+    width: 100%; /* Lățimea completă */
+    z-index: 1000; /* Asigură-te că este deasupra altor elemente */
+  }
+
+  .navbar.open ul {
+    flex-direction: column; /* Dispunere verticală a link-urilor */
+    align-items: center; /* Center items */
+    padding: 10px 0; /* Padding pe verticală */
+  }
+
+  .navbar.open li {
+    margin: 10px 0; /* Distanțare între link-uri */
+  }
+  .footer {
+    bottom: 0;
+    z-index: 1; 
   }
 }
 
-/* Definirea animației bounce */
+
+
+/* animation logo */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0); 
+  0%, 100% {
+    transform: translateY(0); /* Poziția inițială */
+  }
+  20% {
+    transform: translateY(-20px); /* Sărirea în sus */
   }
   40% {
-    transform: translateY(-10px); 
+    transform: translateY(-10px); /* Coborâre intermediară */
   }
   60% {
-    transform: translateY(-5px); 
+    transform: translateY(-5px); /* Aproape la poziția inițială */
   }
 }
