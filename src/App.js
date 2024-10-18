@@ -18,7 +18,10 @@ function App() {
   useEffect(() => {
     fetch('/produits.json')
       .then((res) => res.json())
-      .then((data) => setProduits(data));
+      .then((data) => {
+        // Presupunem că produsele au un câmp quantiteDisponible în JSON
+        setProduits(data);
+      });
   }, []);
 
   const changerCategorie = (categorie) => {
@@ -29,18 +32,38 @@ function App() {
   const ajouterAuPanier = (produit) => {
     const exist = panier.find((item) => item.id === produit.id);
     if (exist) {
-      setPanier(panier.map((item) =>
-        item.id === produit.id ? { ...exist, quantité: exist.quantité + 1 } : item));
+      // Verifică dacă există stoc disponibil
+      if (exist.quantité + 1 <= produit.quantiteDisponible) {
+        setPanier(panier.map((item) =>
+          item.id === produit.id ? { ...exist, quantité: exist.quantité + 1 } : item));
+        setTotal(total + produit.prix);
+      } else {
+        alert('Pas assez de stock disponible pour ce produit.'); // Mesaj de eroare
+      }
     } else {
-      setPanier([...panier, { ...produit, quantité: 1 }]);
+      // Verifică dacă există stoc disponibil
+      if (produit.quantiteDisponible > 0) {
+        setPanier([...panier, { ...produit, quantité: 1 }]);
+        // Actualizează stocul disponibil
+        setProduits(produits.map(item => 
+          item.id === produit.id ? { ...item, quantiteDisponible: item.quantiteDisponible - 1 } : item
+        ));
+        setTotal(total + produit.prix);
+      } else {
+        alert('Pas assez de stock disponible pour ce produit.'); // Mesaj de eroare
+      }
     }
-    setTotal(total + produit.prix);
   };
 
   const enleverDuPanier = (id) => {
     const item = panier.find((item) => item.id === id);
     setPanier(panier.filter((item) => item.id !== id));
     setTotal(total - item.prix * item.quantité);
+    
+    // Reînnoie stocul atunci când un produs este scos din coș
+    setProduits(produits.map(prod => 
+      prod.id === id ? { ...prod, quantiteDisponible: prod.quantiteDisponible + item.quantité } : prod
+    ));
   };
 
   const soumettreCommande = (details) => {

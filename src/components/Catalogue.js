@@ -1,9 +1,8 @@
-// src/components/Catalogue.js
 
 import React from 'react';
 
 const Catalogue = ({ produits, ajouterAuPanier, categorie }) => {
-  // Filtrare produse pe baza categoriei
+ 
   const filteredProduits = categorie === 'all'
     ? produits
     : produits.filter((produit) => produit.categorie === categorie);
@@ -12,11 +11,21 @@ const Catalogue = ({ produits, ajouterAuPanier, categorie }) => {
     <div className="catalogue">
       {filteredProduits.map((produit) => (
         <div key={produit.id} className="produit">
-          <img src={produit.image} alt={produit.nom} /> {/* Afișează imaginea produsului */}
+          <img src={produit.image} alt={produit.nom} /> {/* img */}
           <h3>{produit.nom}</h3>
-          <p>{produit.description}</p> {/* Afișează descrierea produsului */}
+          <p>{produit.description}</p> {/*description*/}
           <p>Prix: {produit.prix} €</p>
-          <button onClick={() => ajouterAuPanier(produit)}>Ajouter au Panier</button>
+          <p>Stock disponible: {produit.quantiteDisponible} unités</p> {/*stock*/}
+
+          <button 
+            onClick={() => ajouterAuPanier(produit)} 
+            disabled={produit.quantiteDisponible <= 0} 
+          >
+            Ajouter au Panier
+          </button>
+
+          {/*out off stock */}
+          {produit.quantiteDisponible <= 0 && <p style={{ color: 'red' }}>Rupture de stoc</p>}
         </div>
       ))}
     </div>
