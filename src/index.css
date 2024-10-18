@@ -1,17 +1,20 @@
-/* Stiluri generale */
+
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
   box-sizing: border-box;
-  min-height: 100vh; /* Asigură că pagina are o înălțime minimă */
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
-  background-image: url('../public/img/background.avif'); /* Ajustează calea */
-  height: 100vh; /* Înalțimea 100% din înălțimea ferestrei */
-  background-size: cover; /* Asigură-te că imaginea acoperă întregul spațiu */
-  background-position: center; /* Centrează imaginea */
-  background-repeat: no-repeat; /* Previne repetarea imaginii */
+  background: linear-gradient(to bottom, 
+  rgb(245, 150, 239), 
+  rgb(245, 161, 239), 
+  rgb(247, 178, 243), 
+  rgb(245, 193, 243), 
+  rgb(245, 207, 244), 
+  rgb(246, 218, 245), 
+  rgb(246, 230, 246))
 }
 
 .App {
@@ -21,15 +24,13 @@ body, html {
 }
 
 .main-content {
-  flex: 1; /* Permite conținutului principal să ocupe tot spațiul disponibil */
-  padding-bottom: 100px; /* Adaugă padding pentru a face loc footer-ului */
-}
-
-.container {
+  flex: 1; 
+  padding-bottom: 100px; }
+ .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  flex-grow: 1; /* Permite containerului să crească și să ocupe spațiul liber */
+  flex-grow: 1; 
 }
 
 img {
@@ -38,12 +39,12 @@ img {
   display: block;
 }
 
-/* Layout flexibil pentru produse */
+
 .catalogue {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center; /* Aliniază produsele în centru */
+  justify-content: center; 
   margin-top: 10px;
   
 }
@@ -57,8 +58,8 @@ img {
 }
 
 .produit img {
-  width: 100%; /* Asigură că imaginile sunt responsive */
-  height: 150px; /* Setează o înălțime fixă pentru toate imaginile */
+  width: 100%; 
+  height: 150px; 
   object-fit: contain;
 }
 
@@ -80,7 +81,7 @@ img {
   background-color: #b62f6e;
 }
 
-/* Layout coș de cumpărături */
+
 .panier {
   margin-top: 20px;
   margin-left: auto;
@@ -89,7 +90,7 @@ img {
   padding: 20px;
   width: 100%;
   min-height: 29vh;
-  max-width: 600px; /* Limitează lățimea la dimensiuni mari */
+  max-width: 600px; 
   background-color: #fefefe;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 2px solid #e0e0e0;
@@ -218,7 +219,7 @@ img {
   background-color: #b62f6e;
 }
 
-/* Stiluri pentru secțiunea contact */
+/*contact */
 .contact {
   margin: 20px auto;
   padding: 20px;
@@ -269,7 +270,7 @@ img {
   background-color: #b62f6e;
 }
 
-/* Stiluri pentru elementele de navigare și header */
+/* nav, header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -328,12 +329,12 @@ img {
   padding: 20px;
   border-top: 2px solid #e0e0e0;
   width: 100%;
-  /* Folosește fixed pentru a-l fixa în partea de jos */
-  bottom: 0; /* Așează-l în partea de jos a ferestrei */
+ 
+  bottom: 0;
   z-index: 1; 
 }
 
-/* Media queries pentru diferite dimensiuni de ecran */
+/* Media queries */
 @media only screen and (max-width: 1024px) {
   .container {
     padding: 15px;
